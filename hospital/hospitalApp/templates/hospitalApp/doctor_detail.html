@@ -1,0 +1,23 @@
+{% extends "hospitalApp/base.html" %}
+{% load static %}
+
+{% block title %}
+<h1>
+    Información del doctor {{ doctor.name }} {{ doctor.last_name }}
+</h1>
+{% endblock %}
+
+{% block bodyContext %}
+
+<p>Nombre: <i>{{ doctor.name }}</i></p>
+<p>Apellido: <i>{{ doctor.last_name }}</i></p>
+<p>Email: <i>{{ doctor.email }}</i></p>
+<p>Edad: <i>{{ doctor.age }}</i></p>
+<p>Especialidad: <i>{{ doctor.specialty }}</i></p>
+<p>Hora de entrada: <i>{{ doctor.entrance_time }}</i></p>
+<p>Hora de salida: <i>{{ doctor.exit_time }}</i></p>
+
+<button>
+    <a href="{% url 'doctors_list' %}">Regresar</a>
+</button>
+{% endblock %}

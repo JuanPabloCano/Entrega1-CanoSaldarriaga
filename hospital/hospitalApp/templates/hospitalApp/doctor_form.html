@@ -1,0 +1,20 @@
+{% extends "hospitalApp/base.html" %}
+{% load static %}
+
+{% block title %}
+<h1>
+    Formulario para la creación de doctor
+</h1>
+{% endblock %}
+
+{% block bodyContext %}
+
+<form method="post">{% csrf_token %}
+    {{ form.as_p}}
+    <input type="submit" value="Enviar">
+</form>
+<button>
+    <a href="{% url 'doctors_list' %}">Regresar</a>
+</button>
+
+{% endblock %}

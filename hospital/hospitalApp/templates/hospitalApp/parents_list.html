@@ -1,0 +1,33 @@
+{% extends "hospitalApp/base.html" %}
+{% load static %}
+
+{% block title %}
+<h1>
+    Bienvenido a la página de parientes
+</h1>
+{% endblock %}
+
+{% block bodyContext %}
+
+{% for parent in object_list %}
+<ul>
+    <li>
+        {{ parent.name }} - {{parent.id}}
+    </li>
+</ul>
+<button>
+    <a href="{% url 'parent_detail' parent.id %}">Detalle</a>
+</button>
+<button>
+    <a href="{% url 'parent_update' parent.id %}">Editar</a>
+</button>
+<button>
+    <a href="{% url 'parent_delete' parent.id %}">Borrar</a>
+</button>
+
+{% endfor %}
+<hr>
+<button>
+    <a href="{% url 'parent_create' %}">Crear Pariente</a>
+</button>
+{% endblock %}

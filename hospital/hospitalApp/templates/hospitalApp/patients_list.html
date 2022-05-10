@@ -1,0 +1,33 @@
+{% extends "hospitalApp/base.html" %}
+{% load static %}
+
+{% block title %}
+<h1>
+    Bienvenido a la página de pacientes
+</h1>
+{% endblock %}
+
+{% block bodyContext %}
+
+{% for patient in object_list %}
+<ul>
+    <li>
+        {{ patient.name }} - {{patient.id}}
+    </li>
+</ul>
+<button>
+    <a href="{% url 'patient_detail' patient.id %}">Detalle</a>
+</button>
+<button>
+    <a href="{% url 'patient_update' patient.id %}">Editar</a>
+</button>
+<button>
+    <a href="{% url 'patient_delete' patient.id %}">Borrar</a>
+</button>
+
+{% endfor %}
+<hr>
+<button>
+    <a href="{% url 'patient_create' %}">Crear Paciente</a>
+</button>
+{% endblock %}

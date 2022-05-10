@@ -1,0 +1,19 @@
+{% extends "hospitalApp/base.html" %}
+{% load static %}
+
+{% block title %}
+<h1>
+    Está seguro de eliminar al pariente {{ parent.name }}
+</h1>
+{% endblock %}
+
+{% block bodyContext %}
+
+<form method="post">{% csrf_token %}
+    <input type="submit" value="SI" >
+    <button>
+        <a href="{% url 'parents_list' %}">No</a>
+    </button>
+</form>
+
+{% endblock %}

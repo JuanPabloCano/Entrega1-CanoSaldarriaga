@@ -1,0 +1,33 @@
+{% extends "hospitalApp/base.html" %}
+{% load static %}
+
+{% block title %}
+<h1>
+    Bienvenido a la página de doctores
+</h1>
+{% endblock %}
+
+{% block bodyContext %}
+
+{% for doctor in object_list %}
+<ul>
+    <li>
+        {{ doctor.name }} - {{doctor.id}}
+    </li>
+</ul>
+<button>
+    <a href="{% url 'doctor_detail' doctor.id %}">Detalle</a>
+</button>
+<button>
+    <a href="{% url 'doctor_update' doctor.id %}">Editar</a>
+</button>
+<button>
+    <a href="{% url 'doctor_delete' doctor.id %}">Borrar</a>
+</button>
+
+{% endfor %}
+<hr>
+<button>
+    <a href="{% url 'doctor_create' %}">Crear Doctor</a>
+</button>
+{% endblock %}
