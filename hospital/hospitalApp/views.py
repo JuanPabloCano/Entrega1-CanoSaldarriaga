@@ -91,7 +91,59 @@ class ParentUpdate(UpdateView):
 
 
 class ParentDelete(DeleteView):
-    model = Patient
+    model = Parent
     success_url = reverse_lazy('parents_list')
     fields = ['name', 'last_name', 'email', 'age', 'medical_history', 'patient_relantionship']
 
+# class DoctorSearch(ListView):
+#     template_name = 'hospitalApp/doctor_search.html'
+#     model = Doctor
+#
+#     def get_queryset(self):
+#         name = self.request.GET.get['name']
+#         object_list = self.model.objects.all()
+#         if name:
+#             object_list = self.model.objects.filter(name__icontains=name)
+#         else:
+#             object_list = self.model.objects.none()
+#         return object_list
+
+def doctorSearchResults(request):
+    return render(request, 'hospitalApp/doctor_search.html')
+
+def search(request):
+    if request.GET['name']:
+        name = request.GET['name']
+        doctors = Doctor.objects.filter(name=name)
+        return render(request, 'hospitalApp/results.html', {'doctors': doctors, 'name': name})
+    else:
+        response = "No existe ese nombre"
+        return render(request, 'hospitalApp/results.html', {'response': response})
+    return render(request, 'hospitalApp/doctors_list.html')
+
+def patientSearchResults(request):
+    return render(request, 'hospitalApp/patient_search.html')
+
+def patientSearch(request):
+    if request.GET['name']:
+        name = request.GET['name']
+        patients = Patient.objects.filter(name=name)
+        return render(request, 'hospitalApp/patient_results.html', {'patients': patients, 'name': name})
+    else:
+        response = "No existe ese nombre"
+        return render(request, 'hospitalApp/patient_results.html', {'response': response})
+    return render(request, 'hospitalApp/patients_list.html')
+
+
+def parentSearchResults(request):
+    return render(request, 'hospitalApp/parent_search.html')
+
+def parentSearch(request):
+    if request.GET['name']:
+        name = request.GET['name']
+        parents = Parent.objects.filter(name=name)
+        return render(request, 'hospitalApp/parent_results.html', {'parents': parents, 'name': name})
+    else:
+        response = "No existe ese nombre"
+        return render(request, 'hospitalApp/parent_results.html', {'response': response})
+    return render(request, 'hospitalApp/parent_list.html')

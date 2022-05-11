@@ -9,12 +9,13 @@
 
 {% block bodyContext %}
 
+<p>ID: <i>{{ parent.id }}}</i></p>
 <p>Nombre: <i>{{ parent.name }}</i></p>
 <p>Apellido: <i>{{ parent.last_name }}</i></p>
 <p>Email: <i>{{ parent.email }}</i></p>
 <p>Edad: <i>{{ parent.age }}</i></p>
-<p>Historia médica: <i>{{ parent.specialty }}</i></p>
-<p>Parentezco: <i>{{ parent.patient_relationship }}</i></p>
+<p>Historia médica: <i>{{ parent.medical_history }}</i></p>
+<p>Parentezco: <i>{{ parent.patient_relantionship }}</i></p>
 
 <button>
     <a href="{% url 'parents_list' %}">Regresar</a>

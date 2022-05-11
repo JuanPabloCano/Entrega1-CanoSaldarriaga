@@ -3,31 +3,39 @@
 
 {% block title %}
 <h1>
-    Bienvenido a la página de pacientes
+    Página de pacientes
 </h1>
+<div class="justify-content-md-end mt-4">
+    <button class="btn btn-outline-dark">
+        <a href="{% url 'patient_search_results' %}">Buscar Paciente</a>
+    </button>
+    <button class="btn btn-outline-dark">
+        <a href="{% url 'patient_create' %}">Crear Paciente</a>
+    </button>
+</div>
+
 {% endblock %}
 
 {% block bodyContext %}
 
 {% for patient in object_list %}
-<ul>
-    <li>
-        {{ patient.name }} - {{patient.id}}
-    </li>
-</ul>
-<button>
-    <a href="{% url 'patient_detail' patient.id %}">Detalle</a>
-</button>
-<button>
-    <a href="{% url 'patient_update' patient.id %}">Editar</a>
-</button>
-<button>
-    <a href="{% url 'patient_delete' patient.id %}">Borrar</a>
-</button>
-
+<div class="card text-center mt-5 border-dark">
+    <div class="card-header">
+        <ul class="nav nav-pills card-header-pills">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'patient_detail' patient.id %}">Detalle</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'patient_update' patient.id %}">Editar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'patient_delete' patient.id %}">Borrar</a>
+            </li>
+        </ul>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{ patient.name }} {{patient.last_name }}</h5>
+    </div>
+</div>
 {% endfor %}
-<hr>
-<button>
-    <a href="{% url 'patient_create' %}">Crear Paciente</a>
-</button>
 {% endblock %}

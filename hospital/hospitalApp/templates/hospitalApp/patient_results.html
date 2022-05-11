@@ -1,0 +1,36 @@
+{% extends "hospitalApp/base.html" %}
+{% load static %}
+
+{% block title %}
+{% endblock %}
+
+{% block bodyContext %}
+
+{% if not response %}
+
+<h1>Buscando pacientes con el nombre: {{name}}</h1>
+
+{% if patients %}
+
+{% for patient in patients %}
+<div class="row-sm-8">
+    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{patient.name}} {{patient.last_name}}</h5>
+            <a href="{% url 'patient_detail' patient.id %}" class="btn btn-primary">Detalles</a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+<button>
+    <a href="{% url 'doctors_list' %}">Regresar</a>
+</button>
+{% else %}
+
+<p>ERROR! NO SE ENCONTRARON DATOS</p>
+
+{% endif %}
+{% else %}
+<h1 style="color:red"> {{response}}</h1>
+{% endif %}
+{% endblock %}

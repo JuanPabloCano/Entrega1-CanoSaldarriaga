@@ -19,4 +19,11 @@ urlpatterns = [
     path('parent/create/', ParentCreate.as_view(), name='parent_create'),
     path('parent/update/<pk>', ParentUpdate.as_view(), name='parent_update'),
     path('parent/delete/<pk>', ParentDelete.as_view(), name='parent_delete'),
+    #path('doctor/search/', DoctorSearch.as_view(), name='doctor_search')
+    path('search/', search, name='search'),
+    path('doctorSearch/', doctorSearchResults, name='doctorSearch'),
+    path('patient/search/', patientSearch, name='patient_search'),
+    path('patientSearch/', patientSearchResults, name='patient_search_results'),
+    path('parent/search/', parentSearch, name='parent_search'),
+    path('parentSearch/', parentSearchResults, name='parent_search_results'),
 ]

@@ -3,31 +3,39 @@
 
 {% block title %}
 <h1>
-    Bienvenido a la página de parientes
+    Página de parientes
 </h1>
+<div class="justify-content-md-end mt-4">
+    <button class="btn btn-outline-dark">
+        <a href="{% url 'parent_search_results' %}">Buscar Pariente</a>
+    </button>
+    <button class="btn btn-outline-dark">
+        <a href="{% url 'parent_create' %}">Crear Pariente</a>
+    </button>
+</div>
+
 {% endblock %}
 
 {% block bodyContext %}
 
 {% for parent in object_list %}
-<ul>
-    <li>
-        {{ parent.name }} - {{parent.id}}
-    </li>
-</ul>
-<button>
-    <a href="{% url 'parent_detail' parent.id %}">Detalle</a>
-</button>
-<button>
-    <a href="{% url 'parent_update' parent.id %}">Editar</a>
-</button>
-<button>
-    <a href="{% url 'parent_delete' parent.id %}">Borrar</a>
-</button>
-
+<div class="card text-center mt-5 border-dark">
+    <div class="card-header">
+        <ul class="nav nav-pills card-header-pills">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'parent_detail' parent.id %}">Detalle</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'parent_update' parent.id %}">Editar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'parent_delete' parent.id %}">Borrar</a>
+            </li>
+        </ul>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{ parent.name }} {{parent.last_name }}</h5>
+    </div>
+</div>
 {% endfor %}
-<hr>
-<button>
-    <a href="{% url 'parent_create' %}">Crear Pariente</a>
-</button>
 {% endblock %}

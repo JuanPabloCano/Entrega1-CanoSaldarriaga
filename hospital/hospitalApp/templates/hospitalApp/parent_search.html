@@ -1,0 +1,17 @@
+{% extends "hospitalApp/base.html" %}
+{% load static %}
+
+{% block title %}
+<h1>Formulario de búsqueda</h1>
+{% endblock %}
+
+{% block bodyContext %}
+<form action="{% url 'parent_search' %}" method="GET">
+    <input type="text" placeholder="name" name="name" id="name">
+    <input type="submit" value="Buscar">
+    <button>
+        <a href="{% url 'parents_list' %}">Regresar</a>
+    </button>
+</form>
+
+{% endblock %}
