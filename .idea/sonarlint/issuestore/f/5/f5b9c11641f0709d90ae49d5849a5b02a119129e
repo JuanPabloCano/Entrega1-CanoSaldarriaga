@@ -1,0 +1,11 @@
+
+rpython:S1192x"UDefine a constant instead of duplicating this literal "No existe ese nombre" 3 times.(‘ñ»ìüÿÿÿÿ
+;python:S125b"Remove this commented out code.(š®÷Ìüÿÿÿÿ
+vpython:S1542o"YRename function "doctorSearchResults" to match the regular expression ^[a-z_][a-z0-9_]*$.(‹ÚõÛøÿÿÿÿ
+_python:S1763z"GDelete this unreachable code or refactor the code to make it reachable.(–®®˜
+wpython:S1542|"ZRename function "patientSearchResults" to match the regular expression ^[a-z_][a-z0-9_]*$.(–âÓ‡ÿÿÿÿÿ
+ppython:S1542"SRename function "patientSearch" to match the regular expression ^[a-z_][a-z0-9_]*$.(·ëÈõşÿÿÿÿ
+_python:S1763‡"GDelete this unreachable code or refactor the code to make it reachable.(‰Ë±
+rpython:S1542Š"YRename function "parentSearchResults" to match the regular expression ^[a-z_][a-z0-9_]*$.(êÂıŠ
+kpython:S1542"RRename function "parentSearch" to match the regular expression ^[a-z_][a-z0-9_]*$.(„æ¡‰
+epython:S1763•"GDelete this unreachable code or refactor the code to make it reachable.(§†äÌşÿÿÿÿ
