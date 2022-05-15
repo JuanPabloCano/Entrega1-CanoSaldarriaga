@@ -59,9 +59,3 @@ m
 =hospital/hospitalApp/templates/hospitalApp/doctor_search.html,2\a\2a7fb97655359607cd93d967ccb5c202d55f5db6
 Z
 *hospital/hospitalApp/static/css/styles.css,8\3\8346df372b13f2bc4eaa37793ff0c293d9edb986
-n
->hospital/hospitalApp/templates/hospitalApp/parent_results.html,d\3\d36ea7620367c60f7b88691aaceb8afe1226e5d0
-o
-?hospital/hospitalApp/templates/hospitalApp/patient_results.html,a\1\a15843263d42fd0886a2c4f3b1423c683eba4f18
-g
-7hospital/hospitalApp/templates/hospitalApp/results.html,1\c\1ce020fca3f0efc4cce21040df627b8caf3a318a
