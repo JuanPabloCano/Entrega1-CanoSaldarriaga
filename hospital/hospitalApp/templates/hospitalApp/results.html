@@ -28,6 +28,9 @@
 {% else %}
 
 <p>ERROR! NO SE ENCONTRARON DATOS</p>
+<button>
+    <a href="{% url 'doctors_list' %}">Regresar</a>
+</button>
 
 {% endif %}
 {% else %}

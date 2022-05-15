@@ -1,3 +1,26 @@
 body{
 margin-top: 10rem
 }
+.card{
+position: relative;
+}
+
+.card::before{
+content: " ";
+position: absolute;
+top: 0;
+left: 0;
+width: calc(100%, +8px);
+height: calc(-4px, -4px);
+transform: translate(-4px, -4px);
+background:linear-gradient(60deg, #5ff281, #5f86f2, #a65ff2, #f25fd0, #f25f61, #f2cb5f) 0 50%;
+background-size:300% 300%
+animation: gradient-animation 2.5s alternate infinite;
+border-radius:8px;
+z-index:-1;
+}
+@keyframes gradient-animation{
+50%{
+background-position:100% 50%
+}
+}

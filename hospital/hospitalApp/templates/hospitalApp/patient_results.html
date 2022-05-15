@@ -23,11 +23,14 @@
 </div>
 {% endfor %}
 <button>
-    <a href="{% url 'doctors_list' %}">Regresar</a>
+    <a href="{% url 'patients_list' %}">Regresar</a>
 </button>
 {% else %}
 
 <p>ERROR! NO SE ENCONTRARON DATOS</p>
+<button>
+    <a href="{% url 'patients_list' %}">Regresar</a>
+</button>
 
 {% endif %}
 {% else %}
